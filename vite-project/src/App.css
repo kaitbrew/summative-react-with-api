@@ -1,78 +1,63 @@
 #root {
+  width: 100%;
   max-width: 1280px;
-  margin: 0 auto;
   padding: 2rem;
-  text-align: center;
+}
+
+.app-wrapper {
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  border-radius: 30px;
+  padding: 50px;
+  box-shadow: 0 10px 40px rgba(138, 103, 171, 0.4);
 }
 
 .cat-fact-container {
-  padding: 20px;
   max-width: 600px;
   margin: 0 auto;
+  text-align: center;
+}
+
+h1 {
+  color: #6b4d8a;
+  margin-bottom: 30px;
+  font-size: 2.5rem;
 }
 
 .cat-fact-button {
-  padding: 10px 20px;
-  font-size: 16px;
+  display: block;
+  padding: 12px 30px;
+  font-size: 18px;
   cursor: pointer;
-  background-color: #646cff;
+  background-color: #9370db;
   color: white;
   border: none;
-  border-radius: 8px;
-  transition: background-color 0.3s;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  box-shadow: 0 4px 15px rgba(147, 112, 219, 0.3);
+  margin: 0 auto;
 }
 
 .cat-fact-button:hover:not(:disabled) {
-  background-color: #535bf2;
+  background-color: #7b68ee;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(147, 112, 219, 0.4);
 }
 
 .cat-fact-button:disabled {
   cursor: not-allowed;
   opacity: 0.6;
+  transform: none;
 }
 
 .fact-display {
-  margin-top: 20px;
-  padding: 15px;
-  background-color: #f0f0f0;
-  border-radius: 8px;
-  color: #213547;
-}
-
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+  margin-top: 30px;
+  padding: 25px;
+  background: linear-gradient(135deg, #f0e6ff 0%, #e6d9f5 100%);
+  border-radius: 15px;
+  color: #4a3360;
+  border: 2px solid #d8bfd8;
+  line-height: 1.6;
+  font-size: 1.1rem;
 }

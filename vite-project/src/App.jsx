@@ -19,21 +19,23 @@ function App() {
   };
 
   return (
-    <div className="cat-fact-container">
-      <h1>Random Cat Facts</h1>
-      <button 
-        onClick={fetchRandomFact}
-        disabled={loading}
-        className="cat-fact-button"
-      >
-        {loading ? 'Loading...' : 'Get Random Cat Fact'}
-      </button>
-      
-      {fact && (
-        <div className="fact-display">
-          <p>{fact}</p>
-        </div>
-      )}
+    <div className="app-wrapper">
+      <div className="cat-fact-container">
+        <h1>Random Cat Facts</h1>
+        <button 
+          onClick={fetchRandomFact}
+          disabled={loading}
+          className="cat-fact-button"
+        >
+          {loading ? 'Loading...' : 'Get Random Cat Fact'}
+        </button>
+        
+        {fact && (
+          <div className="fact-display">
+            <p>{fact}</p>
+          </div>
+        )}
+      </div>
     </div>
   );
 }
