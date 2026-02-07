@@ -1,35 +1,50 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from 'react';
 
-function App() {
-  const [count, setCount] = useState(0)
+function CatFactApp() {
+  const [fact, setFact] = useState('');
+  const [loading, setLoading] = useState(false);
+
+  const fetchRandomFact = async () => {
+    setLoading(true);
+    try {
+      const response = await fetch('https://catfact.ninja/fact');
+      const data = await response.json();
+      setFact(data.fact);
+    } catch (error) {
+      console.error('Error fetching cat fact:', error);
+      setFact('Failed to fetch cat fact. Please try again.');
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div style={{ padding: '20px', maxWidth: '600px', margin: '0 auto' }}>
+      <h1>Random Cat Facts</h1>
+      <button 
+        onClick={fetchRandomFact}
+        disabled={loading}
+        style={{ 
+          padding: '10px 20px', 
+          fontSize: '16px',
+          cursor: loading ? 'not-allowed' : 'pointer'
+        }}
+      >
+        {loading ? 'Loading...' : 'Get Random Cat Fact'}
+      </button>
+      
+      {fact && (
+        <div style={{ 
+          marginTop: '20px', 
+          padding: '15px', 
+          backgroundColor: '#f0f0f0',
+          borderRadius: '8px'
+        }}>
+          <p>{fact}</p>
+        </div>
+      )}
+    </div>
+  );
 }
 
-export default App
+export default CatFactApp;
