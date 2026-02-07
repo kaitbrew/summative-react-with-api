@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-function CatFactApp() {
+function App() {
   const [fact, setFact] = useState('');
   const [loading, setLoading] = useState(false);
 
@@ -17,28 +17,20 @@ function CatFactApp() {
       setLoading(false);
     }
   };
+
   return (
-    <div style={{ padding: '20px', maxWidth: '600px', margin: '0 auto' }}>
+    <div className="cat-fact-container">
       <h1>Random Cat Facts</h1>
       <button 
         onClick={fetchRandomFact}
         disabled={loading}
-        style={{ 
-          padding: '10px 20px', 
-          fontSize: '16px',
-          cursor: loading ? 'not-allowed' : 'pointer'
-        }}
+        className="cat-fact-button"
       >
         {loading ? 'Loading...' : 'Get Random Cat Fact'}
       </button>
       
       {fact && (
-        <div style={{ 
-          marginTop: '20px', 
-          padding: '15px', 
-          backgroundColor: '#f0f0f0',
-          borderRadius: '8px'
-        }}>
+        <div className="fact-display">
           <p>{fact}</p>
         </div>
       )}
@@ -46,4 +38,4 @@ function CatFactApp() {
   );
 }
 
-export default CatFactApp;
+export default App;
