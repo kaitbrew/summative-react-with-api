@@ -17,7 +17,6 @@ function CatFactApp() {
       setLoading(false);
     }
   };
-
   return (
     <div style={{ padding: '20px', maxWidth: '600px', margin: '0 auto' }}>
       <h1>Random Cat Facts</h1>
