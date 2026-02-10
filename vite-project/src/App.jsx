@@ -27,14 +27,14 @@ function App() {
             <p>{fact}</p>
           </div>
         )}
-      </div>
+      </div><p>
       <button
         onClick={fetchRandomFact}
         disabled={loading}
         className="cat-fact-button"
       >
-        {loading ? "Loading..." : "Get Random Cat Fact"}
-      </button>
+        {loading ? "Loading..." : "Get A Cat Fact"}
+      </button></p>
     </div>
   );
 }
