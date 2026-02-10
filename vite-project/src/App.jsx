@@ -1,19 +1,19 @@
-import { useState } from 'react';
-import './App.css';
+import { useState } from "react";
+import "./App.css";
 
 function App() {
-  const [fact, setFact] = useState('');
+  const [fact, setFact] = useState("");
   const [loading, setLoading] = useState(false);
 
   const fetchRandomFact = async () => {
     setLoading(true);
     try {
-      const response = await fetch('https://catfact.ninja/fact');
+      const response = await fetch("https://catfact.ninja/fact");
       const data = await response.json();
       setFact(data.fact);
     } catch (error) {
-      console.error('Error fetching cat fact:', error);
-      setFact('Failed to fetch cat fact. Please try again.');
+      console.error("Error fetching cat fact:", error);
+      setFact("Failed to fetch cat fact. Please try again.");
     } finally {
       setLoading(false);
     }
@@ -22,21 +22,19 @@ function App() {
   return (
     <div className="app-wrapper">
       <div className="cat-fact-container">
-        <h1>Random Cat Facts</h1>
-        <button 
-          onClick={fetchRandomFact}
-          disabled={loading}
-          className="cat-fact-button"
-        >
-          {loading ? 'Loading...' : 'Get Random Cat Fact'}
-        </button>
-        
         {fact && (
           <div className="fact-display">
             <p>{fact}</p>
           </div>
         )}
       </div>
+      <button
+        onClick={fetchRandomFact}
+        disabled={loading}
+        className="cat-fact-button"
+      >
+        {loading ? "Loading..." : "Get Random Cat Fact"}
+      </button>
     </div>
   );
 }
