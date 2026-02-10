@@ -1,0 +1,32 @@
+#root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 1280px;
+  padding: 2rem;
+  margin: 0 auto;
+}
+
+h1 {
+  color: #6b4d8a;
+  margin-bottom: 30px;
+  font-size: 2.5rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  .app-wrapper {
+    background-color: rgba(255, 255, 255, 0.85);
+    color: #4a3360;
+  }
+
+  h1 {
+    color: #6b4d8a;
+  }
+
+  .fact-display {
+    background: linear-gradient(135deg, #f0e6ff 0%, #e6d9f5 100%);
+    color: #4a3360;
+    border: 2px solid #d8bfd8;
+  }
+}
