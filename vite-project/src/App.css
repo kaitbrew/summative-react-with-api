@@ -1,5 +1,6 @@
 #root {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100%;
@@ -42,7 +43,7 @@ h1 {
   transition: all 0.3s ease;
   font-weight: 600;
   box-shadow: 0 4px 15px rgba(147, 112, 219, 0.3);
-  margin: 0 auto;
+  margin: 0 auto 20px;
 }
 
 .cat-fact-button:hover:not(:disabled) {
