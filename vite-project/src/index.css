@@ -4,10 +4,14 @@
   font-weight: 400;
   color-scheme: light dark;
   color: #4a3360;
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 1280px;
+  padding: 2rem;
+  margin: 0 auto;
 }
 
 a {
@@ -30,10 +34,6 @@ body {
   align-items: center;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
 
 button {
   border-radius: 8px;
