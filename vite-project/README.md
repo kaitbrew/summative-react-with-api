@@ -1,16 +1,73 @@
-# React + Vite
+# Summative Project 1 - Random Cat Facts App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Random Cat Facts!
 
-Currently, two official plugins are available:
+A simple, interactive React web app that fetches and displays random cat facts. Click the button to get a new fact! Built with Vite for fast development and React for component-based UI. 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Setup Instructions
 
-## React Compiler
+**Prerequisites:**
+- Node.js 14+ (LTS recommended)
+- npm or Yarn
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+**Installation & Running:**
 
-## Expanding the ESLint configuration
+1. Clone the repository:
+```bash
+git clone <your-repo-url>
+cd summative_1/vite-project
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+2. Install dependencies:
+```bash
+npm install
+```
+
+3. Start the development server:
+```bash
+npm run dev
+```
+The app will be available at `http://localhost:5173`
+
+4. (Optional) Build for production:
+```bash
+npm run build
+```
+
+Available scripts:
+- `npm run dev` — Start Vite dev server
+- `npm run build` — Build for production (output in `dist/`)
+- `npm run preview` — Preview production build locally
+- `npm run lint` — Run ESLint checks
+
+## API Used & Endpoint(s)
+
+**API:** Cat Facts API (https://catfact.ninja/)
+
+**Endpoint used:**
+- `GET https://catfact.ninja/fact` — Returns a JSON object containing a random cat fact
+
+**Response format:**
+```json
+{
+  "fact": "Cat fact text here",
+  "length": 123
+}
+```
+
+The app extracts the `fact` field and displays it in the UI. Requests are made each time the user clicks the "Get A Cat Fact" button.
+
+## Challenges & Known Bugs
+
+- **No challenges or known bugs reported** — The app is functioning as intended. The API is reliable and the fetch logic includes basic error handling.
+- **Potential improvements:** 
+  - Add error state UI (currently just sets fact text to an error message)
+  - Add a loading skeleton while fetching
+  - Cache recent facts to reduce API calls
+  - Add a keyboard shortcut to fetch new facts
+
+---
+
+**Tech Stack:** React, Vite, JavaScript (ESNext)  
+**License & Credits:** Student project. Attribution to [catfact.ninja](https://catfact.ninja/) for the API.
+
